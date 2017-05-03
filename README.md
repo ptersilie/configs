@@ -14,3 +14,9 @@ Customised size, position, window-buttons, clock
 ## Colours
 
 [Gruvbox](https://github.com/morhetz/gruvbox)
+
+## Various
+
+- Window theme: Numix (`numix-gtx-theme`)
+- Icons: Faenza (`faenza-icon-theme`)
+- Terminal: `xfce4-terminal`
