@@ -1,19 +1,21 @@
 # Config collection
 ![desktop](/screenshots/desktop.png)
 
-## ZSH
+## ZSH (.zshrc)
 ![desktop](/screenshots/zsh.png)
 
 Lightweight config in the style of oh-my-zsh. Supports display of git branches.
 
-## Panel
+## Panel (xfce4-panel.xml)
 ![desktop](/screenshots/panel.png)
 
-Customised size, position, window-buttons, clock
+Customised size, position, window-buttons, and clock.
+Copy to `~/.config/xfce4/xfconf/xfce-perchannel-xml/`.
 
 ## Colours
 
-[Gruvbox](https://github.com/morhetz/gruvbox)
+- Vim: [Gruvbox](https://github.com/morhetz/gruvbox)
+- Terminal: `terminalrc` (Colours copied over from gruvbox)
 
 ## Various
 
