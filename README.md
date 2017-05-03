@@ -10,3 +10,7 @@ Lightweight config in the style of oh-my-zsh. Supports display of git branches.
 ![desktop](/screenshots/panel.png)
 
 Customised size, position, window-buttons, clock
+
+## Colours
+
+[Gruvbox](https://github.com/morhetz/gruvbox)
