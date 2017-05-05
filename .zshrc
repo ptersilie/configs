@@ -3,14 +3,12 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.history
 
-# git stuff
-
 color1="blue"
 color2="cyan"
 color3="yellow"
 color4="red"
 
-prompt_git() {
+fancy_prompt() {
     # user@host
     echo -n "%{$bg[$color1]%}%n@%m %{$bg[$color2]%}%{$fg[$color1]%}"
 
@@ -33,7 +31,7 @@ compinit
 
 autoload -U colors && colors
 setopt promptsubst
-PROMPT='%{%f%b%k%}$(prompt_git)'
+PROMPT='%{%f%b%k%}$(fancy_prompt)'
 
 alias ls='ls --color=auto'
 alias ackpy='ack --type=python'
@@ -47,3 +45,13 @@ bindkey "^[[3~" delete-char
 
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
+
+# Set terminal window title to pwd
+case $TERM in
+    xterm*)
+        precmd () {print -Pn "\e]0;%~\a"}
+        ;;
+esac
+
+# Load machine specific settings
+source ~/.zshrc2
