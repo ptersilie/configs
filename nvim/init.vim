@@ -7,6 +7,7 @@ endif
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 Plug 'morhetz/gruvbox'      " gruvbox colorscheme
+Plug 'tpope/vim-fugitive'   " Git extras (e.g. branches)
 Plug 'bling/vim-airline'    " Airline
 Plug 'bling/vim-bufferline' " Show the list of buffers in the command bar
 Plug 'mhinz/vim-signify' " Show diff +/- signs on LHS of screen
