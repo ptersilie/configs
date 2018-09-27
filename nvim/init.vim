@@ -6,23 +6,22 @@ endif
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
-Plug 'morhetz/gruvbox'      " gruvbox colorscheme
-Plug 'tpope/vim-fugitive'   " Git extras (e.g. branches)
-Plug 'bling/vim-airline'    " Airline
-Plug 'bling/vim-bufferline' " Show the list of buffers in the command bar
-Plug 'mhinz/vim-signify' " Show diff +/- signs on LHS of screen
+Plug 'morhetz/gruvbox'             " gruvbox colorscheme
+Plug 'tpope/vim-fugitive'          " Git extras (e.g. branches)
+Plug 'bling/vim-airline'           " Airline
+Plug 'bling/vim-bufferline'        " Show the list of buffers in the command bar
+Plug 'mhinz/vim-signify'           " Show diff +/- signs on LHS of screen
 call plug#end()
 
 " General settings
-set number
-set cursorline
-set nowrap
+set number                         " Show line numbers
+set cursorline                     " Highlight current line
+set nowrap                         " Don't wrap lines
+set hidden                         " Hide buffers
+set mouse+=a                       " Enable mouse
 
 colorscheme gruvbox
 set background=dark
-
-" Enable mouse in console mode
-set mouse+=a
 
 " Airline settings
 set laststatus=2
