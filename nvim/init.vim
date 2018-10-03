@@ -23,6 +23,9 @@ set mouse+=a                       " Enable mouse
 colorscheme gruvbox
 set background=dark
 
+" Share Unix clipboard
+set clipboard=unnamedplus
+
 " Airline settings
 set laststatus=2
 let g:airline_theme             = 'gruvbox'
