@@ -11,6 +11,9 @@ Plug 'tpope/vim-fugitive'          " Git extras (e.g. branches)
 Plug 'bling/vim-airline'           " Airline
 Plug 'bling/vim-bufferline'        " Show the list of buffers in the command bar
 Plug 'mhinz/vim-signify'           " Show diff +/- signs on LHS of screen
+Plug 'w0rp/ale'                    " Asynchronous linting
+Plug 'rust-lang/rust.vim'          " Needed for ALE
+Plug 'kien/ctrlp.vim'              " Fuzzy filename matcher
 call plug#end()
 
 " General settings
@@ -25,6 +28,9 @@ set background=dark
 
 " Share Unix clipboard
 set clipboard=unnamedplus
+
+" Key mappings
+nmap <Tab> :wincmd w<CR>
 
 " Airline settings
 set laststatus=2
@@ -52,3 +58,8 @@ nmap <C-Left> :bp!<CR>
 imap <C-Left> <C-o>:bp!<CR>
 nmap <C-Right> :bn!<CR>
 imap <C-Right> <C-o>:bn!<CR>
+
+" Ale settings
+let g:ale_rust_cargo_check_all_targets = 1
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
