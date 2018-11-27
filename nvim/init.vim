@@ -13,7 +13,7 @@ Plug 'bling/vim-bufferline'        " Show the list of buffers in the command bar
 Plug 'mhinz/vim-signify'           " Show diff +/- signs on LHS of screen
 Plug 'w0rp/ale'                    " Asynchronous linting
 Plug 'rust-lang/rust.vim'          " Needed for ALE
-Plug 'kien/ctrlp.vim'              " Fuzzy filename matcher
+Plug 'ctrlpvim/ctrlp.vim'          " Fuzzy filename matcher
 call plug#end()
 
 " General settings
@@ -22,6 +22,7 @@ set cursorline                     " Highlight current line
 set nowrap                         " Don't wrap lines
 set hidden                         " Hide buffers
 set mouse+=a                       " Enable mouse
+set ignorecase                     " Case insensitive search
 
 colorscheme gruvbox
 set background=dark
@@ -63,3 +64,7 @@ imap <C-Right> <C-o>:bn!<CR>
 let g:ale_rust_cargo_check_all_targets = 1
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" Ctrl+P settings
+let g:ctrlp_regexp = 0		" Disable regex search (toggle with Ctrl+R)
+let g:ctrlp_show_hidden = 0	" Show hidden files
