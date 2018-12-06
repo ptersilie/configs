@@ -16,6 +16,13 @@ Plug 'rust-lang/rust.vim'          " Needed for ALE
 Plug 'ctrlpvim/ctrlp.vim'          " Fuzzy filename matcher
 call plug#end()
 
+let g:ale_linters = {
+    \ 'rust': [ 'rls' ],
+    \ }
+let g:ale_rust_rls_toolchain = 'stable'
+
+au FileType rust nmap gd :ALEGoToDefinition<CR>
+
 " General settings
 set number                         " Show line numbers
 set cursorline                     " Highlight current line
@@ -23,6 +30,7 @@ set nowrap                         " Don't wrap lines
 set hidden                         " Hide buffers
 set mouse+=a                       " Enable mouse
 set ignorecase                     " Case insensitive search
+set smartcase                      " Case sensitive when not lowercase
 
 colorscheme gruvbox
 set background=dark
