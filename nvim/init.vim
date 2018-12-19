@@ -31,6 +31,10 @@ set hidden                         " Hide buffers
 set mouse+=a                       " Enable mouse
 set ignorecase                     " Case insensitive search
 set smartcase                      " Case sensitive when not lowercase
+set expandtab                      " Use spaces
+set tabstop=4                      " insert 4 spaces for tab
+set softtabstop=4                  " show tab as 4 spaces
+set shiftwidth=4                   " Indentation space
 
 colorscheme gruvbox
 set background=dark
