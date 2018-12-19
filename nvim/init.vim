@@ -20,6 +20,7 @@ let g:ale_linters = {
     \ 'rust': [ 'rls' ],
     \ }
 let g:ale_rust_rls_toolchain = 'stable'
+autocmd FileType tex ALEDisable
 
 au FileType rust nmap gd :ALEGoToDefinition<CR>
 
