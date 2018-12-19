@@ -31,6 +31,7 @@ set hidden                         " Hide buffers
 set mouse+=a                       " Enable mouse
 set ignorecase                     " Case insensitive search
 set smartcase                      " Case sensitive when not lowercase
+set autoread                       " Auto reload changed files
 set expandtab                      " Use spaces
 set tabstop=4                      " insert 4 spaces for tab
 set softtabstop=4                  " show tab as 4 spaces
