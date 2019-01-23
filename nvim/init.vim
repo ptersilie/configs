@@ -83,3 +83,6 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Ctrl+P settings
 let g:ctrlp_regexp = 0              " Disable regex search (toggle with Ctrl+R)
 let g:ctrlp_show_hidden = 0         " Show hidden files
+
+" Filetype settings
+filetype indent plugin on           " Load plugin/indent files
