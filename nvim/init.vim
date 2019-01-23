@@ -86,3 +86,15 @@ let g:ctrlp_show_hidden = 0         " Show hidden files
 
 " Filetype settings
 filetype indent plugin on           " Load plugin/indent files
+
+" Latex specific settings
+let g:tex_flavor='latex'
+let s:extfname = expand("%:e")
+if s:extfname ==? "tex"
+    let g:LatexBox_split_type = "new"
+    let g:ale_set_highlights = 0
+    nmap <F8> :make! quick<CR>:!xdotool search --onlyvisible mupdf key "r"<CR>
+    nmap <F9> :make!<CR>:!xdotool search mupdf key "r"<CR>
+    nmap <F5> :LatexTOC<CR>
+    setl noai nocin nosi inde=      " Disable auto indentation
+endif
