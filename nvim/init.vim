@@ -81,5 +81,5 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Ctrl+P settings
-let g:ctrlp_regexp = 0		" Disable regex search (toggle with Ctrl+R)
-let g:ctrlp_show_hidden = 0	" Show hidden files
+let g:ctrlp_regexp = 0              " Disable regex search (toggle with Ctrl+R)
+let g:ctrlp_show_hidden = 0         " Show hidden files
