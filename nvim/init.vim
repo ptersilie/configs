@@ -37,6 +37,7 @@ set expandtab                      " Use spaces
 set tabstop=4                      " insert 4 spaces for tab
 set softtabstop=4                  " show tab as 4 spaces
 set shiftwidth=4                   " Indentation space
+set autoindent                     " Copy indent from prev line
 
 colorscheme gruvbox
 set background=dark
