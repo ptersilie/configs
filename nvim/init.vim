@@ -39,6 +39,7 @@ set expandtab                      " Use spaces
 set tabstop=4                      " insert 4 spaces for tab
 set softtabstop=4                  " show tab as 4 spaces
 set shiftwidth=4                   " Indentation space
+set autoindent                     " Copy indent from prev line
 
 colorscheme gruvbox
 set background=dark
@@ -81,10 +82,6 @@ let g:ale_rust_cargo_check_all_targets = 1
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" Ctrl+P settings
-let g:ctrlp_regexp = 0		" Disable regex search (toggle with Ctrl+R)
-let g:ctrlp_show_hidden = 0	" Show hidden files
-
 " Yoink settings
 let g:yoinkMaxItems=50
 let g:yoinkIncludeDeleteOperations=1
@@ -94,3 +91,22 @@ nmap <a-p> <plug>(YoinkPostPasteSwapBack)
 nmap <a-P> <plug>(YoinkPostPasteSwapForward)
 nmap p <plug>(YoinkPaste_p)
 nmap P <plug>(YoinkPaste_P)
+
+" Ctrl+P settings
+let g:ctrlp_regexp = 0              " Disable regex search (toggle with Ctrl+R)
+let g:ctrlp_show_hidden = 0         " Show hidden files
+
+" Filetype settings
+filetype indent plugin on           " Load plugin/indent files
+
+" Latex specific settings
+let g:tex_flavor='latex'
+let s:extfname = expand("%:e")
+if s:extfname ==? "tex"
+    let g:LatexBox_split_type = "new"
+    let g:ale_set_highlights = 0
+    nmap <F8> :make! quick<CR>:!xdotool search --onlyvisible mupdf key "r"<CR>
+    nmap <F9> :make!<CR>:!xdotool search mupdf key "r"<CR>
+    nmap <F5> :LatexTOC<CR>
+    setl noai nocin nosi inde=      " Disable auto indentation
+endif
