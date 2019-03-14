@@ -14,6 +14,8 @@ Plug 'mhinz/vim-signify'           " Show diff +/- signs on LHS of screen
 Plug 'w0rp/ale'                    " Asynchronous linting
 Plug 'rust-lang/rust.vim'          " Needed for ALE
 Plug 'ctrlpvim/ctrlp.vim'          " Fuzzy filename matcher
+Plug 'svermeulen/vim-yoink'        " Rotatet amongst recent yanks
+Plug 'nvie/vim-flake8'             " Python linter
 call plug#end()
 
 let g:ale_linters = {
@@ -82,3 +84,13 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Ctrl+P settings
 let g:ctrlp_regexp = 0		" Disable regex search (toggle with Ctrl+R)
 let g:ctrlp_show_hidden = 0	" Show hidden files
+
+" Yoink settings
+let g:yoinkMaxItems=50
+let g:yoinkIncludeDeleteOperations=1
+let g:yoinkMoveCursorToEndOfPaste=1
+let g:yoinkSwapClampAtEnds=0
+nmap <a-p> <plug>(YoinkPostPasteSwapBack)
+nmap <a-P> <plug>(YoinkPostPasteSwapForward)
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
