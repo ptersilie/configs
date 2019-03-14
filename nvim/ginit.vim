@@ -1,8 +1,8 @@
 let output=system('xrandr | grep \*')
 if output =~ "2560x1440"
-  Guifont Source Code Pro:h13
+  Guifont Fira Mono:h13
 else
-  Guifont Source Code Pro:h11
+  Guifont Fira Mono:h11
 endif
 
 GuiLinespace 1
