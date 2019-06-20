@@ -50,6 +50,10 @@ set clipboard=unnamedplus
 " Key mappings
 nmap <Tab> :wincmd w<CR>
 
+" Automatically reload changed files
+set autoread
+au FocusGained * :checktime
+
 " Airline settings
 set laststatus=2
 let g:airline_theme             = 'gruvbox'
