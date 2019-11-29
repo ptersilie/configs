@@ -13,9 +13,10 @@ Plug 'bling/vim-bufferline'        " Show the list of buffers in the command bar
 Plug 'mhinz/vim-signify'           " Show diff +/- signs on LHS of screen
 Plug 'w0rp/ale'                    " Asynchronous linting
 Plug 'rust-lang/rust.vim'          " Needed for ALE
-Plug 'ctrlpvim/ctrlp.vim'          " Fuzzy filename matcher
-Plug 'svermeulen/vim-yoink'        " Rotatet amongst recent yanks
+Plug 'svermeulen/vim-yoink'        " Rotate amongst recent yanks
 Plug 'nvie/vim-flake8'             " Python linter
+Plug 'junegunn/fzf'                " FZF
+Plug 'junegunn/fzf.vim'            " FZF vim plugin
 call plug#end()
 
 let g:ale_linters = {
@@ -96,9 +97,21 @@ nmap <a-P> <plug>(YoinkPostPasteSwapForward)
 nmap p <plug>(YoinkPaste_p)
 nmap P <plug>(YoinkPaste_P)
 
-" Ctrl+P settings
-let g:ctrlp_regexp = 0              " Disable regex search (toggle with Ctrl+R)
-let g:ctrlp_show_hidden = 0         " Show hidden files
+" FZF settings
+" Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+" Customise options used by 'git log'
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+" Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
+" --expect expression for directly executing the command
+let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+
+nnoremap <C-b> :Buffers<Cr>
+inoremap <C-b> :Buffers<Cr>
+nnoremap <C-p> :Files<Cr>
+inoremap <C-p> :Files<Cr>
+nnoremap gs :Ag <C-R><C-W><Cr>
 
 " Filetype settings
 filetype indent plugin on           " Load plugin/indent files
